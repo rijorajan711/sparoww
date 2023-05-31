@@ -11,7 +11,6 @@ var userRouter = require('./routes/users');
 var app = express();
 var expressLayouts=require("express-ejs-layouts")
 var db=require('./config/connection')
-require('dotenv').config()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
