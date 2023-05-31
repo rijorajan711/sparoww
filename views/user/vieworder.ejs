@@ -1,0 +1,133 @@
+<div class="container">
+    <table class="table table-cart" id="order-history">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th >Order ID</th>
+          <th >Total</th>
+          
+          <th >Date</th>
+          <th >Payment</th>
+          <th >Status</th>
+          <th> Cancelation</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        
+   <% maporder.forEach((data)=>{%>
+
+          <tr>
+            <td><%= data.deliveredto.fname %></td>
+            <td>
+              <%= data.orderid %>
+            </td>
+            <td>
+                <%= data.deliveredto.total %>
+            
+            </td>
+            
+            
+              <td>
+                <%= data.deliveredto.date %>  
+              </td>
+              
+            
+          
+            
+             <td>
+            <%= data.deliveredto.method %>
+           </td>
+           
+           <td>
+            
+               <span  id="<%= data.orderid %>" class="badge badge-pill badge-secondary"><%= data.deliveredto.status %></span>
+           </td>
+
+          <% if( data.deliveredto.status=="delivered"||data.deliveredto.status=="return"){%>
+            <% if(data.deliveredto.status=="return"){%>
+              <td></td>
+     <%}else{%>
+      <td>
+        <button   id="<%= data.orderid+data.orderid %>"  onclick="ordreturn('<%= data.orderid %>','<%= data.orderid+data.orderid %>',' <%= data.deliveredto.date %>' )"  class="btn btn-outline-secondary btn-order btn-block">
+          <span class="btn-text" >Retrun Order</span>
+          <span class="btn-hover-text" >Proceed to Return</span>
+        </button>
+       </td>
+       
+     <%}%>
+
+            
+           <%} else{%>
+            <% if(data.deliveredto.status=="cancel"){%>
+                     <td></td>
+            <%}else{%>
+              <td>
+                <button  id="<%= data.orderid+data.orderid %>"  onclick="ordercancel('<%= data.orderid %>','<%= data.orderid+data.orderid %>' )" class="btn btn-outline-secondary btn-order btn-block">
+                  <span class="btn-text" >Canecel Order</span>
+                  <span class="btn-hover-text"   >Proceed to Cancel</span>
+                </button>
+               </td>
+            <%}%>
+            
+           <%} %>
+            
+           </tr>
+ 
+   <% })%>
+       
+ 
+          
+           
+         </tbody>
+   
+     </table>
+   </div>
+   <script>
+        function ordercancel(orderid,date){
+           
+         $.ajax({
+           
+           url:"/ordercancel",
+           data:{
+             orderid:orderid
+           },
+           method:"post",
+           success:((response)=>{
+                 if(response){
+                  
+                  document.getElementById(orderid).innerText=response
+                  $('#'+date).hide();
+                 }
+           })
+         })
+     }
+
+     function ordreturn(orderid,buttonid,date){
+          
+         $.ajax({
+           
+           url:"/ordreturn",
+           data:{
+             orderid:orderid,
+             date:date
+           },
+           method:"post",
+           success:((response)=>{
+                 if(response){
+                 
+                  document.getElementById(orderid).innerText=response
+                  $('#'+buttonid).hide();
+                 }
+                 else{
+
+                 }
+           })
+         })
+     }
+
+
+   </script>
+   
+           
+              

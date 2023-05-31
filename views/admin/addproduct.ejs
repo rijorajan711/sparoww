@@ -1,0 +1,128 @@
+
+<body>
+    <div class="screen-overlay"></div>
+    
+    <main class="main-wrap">
+        
+        <section class="content-main">
+           
+                        <form  action="/admin/createproductpage"  method="post" enctype="multipart/form-data">
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="content-header">
+                                        <h2 class="content-title">Add New Product</h2>
+                                        <div>
+                                           <input type="submit" class="btn btn-light rounded font-sm mr-5 text-body hover-up" value="Save ">
+                                            <button class="btn btn-md rounded font-sm hover-up">Publich</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <h6>1. General info</h6>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="mb-4">
+                                                        <label class="form-label">Product title</label>
+                                                        <input type="text" placeholder="Type here" name="title" class="form-control">
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label class="form-label">Description</label>
+                                                        <textarea placeholder="Type here" name="description" class="form-control" rows="4"></textarea>
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label class="form-label">Category</label>
+                                                        <select class="form-select" name="category">
+                                                            <% locals.Datacategory.forEach((categories)=>{%>
+                                                                <option><%= categories%> </option>
+                                                           <% })%> 
+                                                            
+                                                            
+                                                        </select>
+                                                    </div>
+                                                </div> <!-- col.// -->
+                                            </div> <!-- row.// -->
+                                            <hr class="mb-4 mt-0">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <h6>2. Pricing</h6>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="mb-4">
+                                                        <label class="form-label">Cost in Rupees</label>
+                                                        <input type="text" placeholder="rs00.0" name="price" class="form-control">
+                                                    </div>
+                                                </div> <!-- col.// -->
+                                            </div> 
+                                            <hr class="mb-4 mt-0">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <h6>3.Quantity</h6>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="mb-4">
+                                                        <label class="form-label">number</label>
+                                                        <input type="number" placeholder="" name="quantity" class="form-control">
+                                                    </div>
+                                                </div> <!-- col.// -->
+                                            </div>
+                                            <hr class="mb-4 mt-0">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <h6>4.Soke staus</h6>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="mb-4">
+                                                       
+                                                        <input type="text" placeholder="" name="stoke" class="form-control">
+                                                    </div>
+                                                </div> <!-- col.// -->
+                                            </div> <!-- row.// -->
+                                            <hr class="mb-4 mt-0">
+                                            <!-- row.// -->
+                                            <hr class="mb-4 mt-0">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <h6>5. Media</h6>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="mb-4">
+                                                        <label class="form-label">Images</label>
+                                                        <input class="form-control" name="images" type="file" multiple>
+                                                    </div>
+                                                </div> <!-- col.// -->
+                                            </div> <!-- .row end// -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </form>
+                        
+        </section> <!-- content-main end// -->
+        <footer class="main-footer font-xs">
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script>
+                    document.write(new Date().getFullYear())
+                    </script> ©, Evara - HTML Ecommerce Template .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    
+</body>
+
+
+<!-- Mirrored from wp.alithemes.com/html/evara/evara-backend/page-form-product-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Aug 2021 15:33:32 GMT -->

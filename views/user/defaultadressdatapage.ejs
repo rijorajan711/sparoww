@@ -1,0 +1,46 @@
+
+    <div class="row">
+        <% datas.forEach((data)=>{%>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body">
+              
+              <p class="card-text text-center" ><%= data.fname %></p>
+              <p class="card-text text-center"><%= data.lname %></p>
+              <p class="card-text text-center"><%= data.country %></p>
+              <p class="card-text text-center"><%= data.address %></p>
+              <p class="card-text text-center"><%= data.city %></p>
+              <p class="card-text text-center"><%= data.state %></p>
+              <p class="card-text text-center"><%= data.pin %></p>
+              <p class="card-text text-center"><%= data.phone %></p>
+              <p class="card-text text-center"><%= data.email %></p>
+            <div class="card-footer text-center bg-transparent">
+                <button class="btn btn-theme pull-left" type="button" id="toleft"></button>
+                <button class="btn btn-primary" type="button"  onclick="defaultadress('<%=data._id %>')"  id="more">Set Deafult</button>
+                <button class="btn btn-theme pull-right" type="button"id="toright"></button>
+            </div>
+              <!--<a href="#" class="btn btn-primary pull-center"></a> -->
+            </div>
+          </div>
+        </div>
+       
+        <%})%>
+      </div>
+
+     <script>
+        let defaultadress=(id)=>{
+          $.ajax({
+            url:"/makedefaultadress",
+            data:{
+                   id:id
+            },
+            method:'post',
+            success:(response)=>{
+                 window.location.href='/checkout'
+            }
+          })
+        }
+     </script>
+
+
+

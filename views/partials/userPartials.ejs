@@ -1,0 +1,343 @@
+<div class="page-wrapper">
+    <header class="header header-intro-clearance header-3">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <a href="tel:#"><i class="icon-phone"></i>Call: +0123 456 789</a>
+                </div><!-- End .header-left -->
+
+                <div class="header-right">
+
+                    <ul class="top-menu">
+                        <li>
+                            <a href="#">Links</a>
+                            <ul>
+                                <li>
+                                    <div class="header-dropdown">
+                                        <a href="#">USD</a>
+                                        <div class="header-menu"  style="color: aliceblue; background-color:#666;">
+                                            <ul>
+                                                <li><a href="#">Eur</a></li>
+                                                <li><a href="#">Usd</a></li>
+                                            </ul>
+                                        </div><!-- End .header-menu -->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="header-dropdown">
+                                        <a href="#">English</a>
+                                        <div class="header-menu" style="color: aliceblue; background-color:#666;">
+                                            <ul>
+                                                <li><a href="#">English</a></li>
+                                                <li><a href="#">French</a></li>
+                                                <li><a href="#">Spanish</a></li>
+                                            </ul>
+                                        </div><!-- End .header-menu -->
+                                    </div>
+                                </li>
+                             
+                                <li>
+
+                                    <% if (locals.user) { %>
+
+                                        <li>
+                                            <div class="header-dropdown" >
+                                                <a href="#"><%= user.username %></a>
+                                                <div class="header-menu">
+                                                    <ul>
+                                                        <li> <a href="/logout" >logout</a></li> 
+                                                        <li><a href="/Adress">Adress</a></li>
+                                                        
+                                                    </ul>
+                                                </div><!-- End .header-menu -->
+                                            </div>
+                                        </li>
+
+
+                                       
+                                     <% }else{%>
+                                       
+                                        <li> <a href="#signin-modal" data-toggle="modal">Sign In/Register</a></li>
+                                        <%} %>
+                                    
+                                           
+                         </ul>
+                        </li>
+                    </ul><!-- End .top-menu -->
+                </div><!-- End .header-right -->
+
+            </div><!-- End .container -->
+        </div><!-- End .header-top -->
+
+        <div class="header-middle">
+            <div class="container">
+                <div class="header-left">
+                    <button class="mobile-menu-toggler">
+                        <span class="sr-only">Toggle mobile menu</span>
+                        <i class="icon-bars"></i>
+                    </button>
+                    
+                    <a href="/" class="logo">
+                        <img src="assets/images/demos/demo-3/logo.png" alt="Molla Logo" width="105" height="25">
+                    </a>
+                </div><!-- End .header-left -->
+
+                <div class="header-center">
+                    <div class="header-search header-search-extended header-search-visible d-none d-lg-block">
+                        <a href="#" class="search-toggle" role="button"><i class="icon-search"></i></a>
+                        <form action="#" method="get">
+                            <div class="header-search-wrapper search-wrapper-wide">
+                                <label for="q" class="sr-only">Search</label>
+                                <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+                                <input type="search" class="form-control" name="q" id="q" placeholder="Search product ..." required>
+                            </div><!-- End .header-search-wrapper -->
+                        </form>
+                    </div><!-- End .header-search -->
+                </div>
+
+                <div class="header-right">
+                    <div class="dropdown compare-dropdown">
+                        <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static" title="Compare Products" aria-label="Compare Products">
+                            <div class="icon">
+                                <i class="icon-random"></i>
+                            </div>
+                            <p>Compare</p>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <ul class="compare-products">
+                                <li class="compare-product">
+                                    <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
+                                    <h4 class="compare-product-title"><a href="product.html">Blue Night Dress</a></h4>
+                                </li>
+                                <li class="compare-product">
+                                    <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
+                                    <h4 class="compare-product-title"><a href="product.html">White Long Skirt</a></h4>
+                                </li>
+                            </ul>
+
+                            <div class="compare-actions">
+                                <a href="#" class="action-link">Clear All</a>
+                                <a href="#" class="btn btn-outline-primary-2"><span>Compare</span><i class="icon-long-arrow-right"></i></a>
+                            </div>
+                        </div><!-- End .dropdown-menu -->
+                    </div><!-- End .compare-dropdown -->
+
+                    <div class="wishlist">
+                        <a href="/wishlist" title="Wishlist">
+                            <div class="icon">
+                                <i class="icon-heart-o"></i>
+                                <span class="wishlist-count badge">3</span>
+                            </div>
+                            <p>Wishlist</p>
+                        </a>
+                    </div><!-- End .compare-dropdown -->
+
+                    <div class=" cart-dropdown">
+                        <a href="/cart" class="dropdown-toggle" role="button"  aria-haspopup="true" aria-expanded="false" data-display="static">
+                            <div class="icon">
+                                <i class="icon-shopping-cart"></i>
+                                <span class="cart-count">2</span>
+                            </div>
+                            <p>Cart</p>
+                        </a>
+
+                    
+                    </div><!-- End .cart-dropdown -->
+                </div><!-- End .header-right -->
+            </div><!-- End .container -->
+        </div><!-- End .header-middle -->
+
+        <div class="header-bottom sticky-header">
+            <div class="container">
+                <div class="header-left">
+                    <div class="dropdown category-dropdown">
+                        <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static" title="Browse Categories">
+                            Browse Categories <i class="icon-angle-down"></i>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <nav class="side-nav">
+                                <ul class="menu-vertical sf-arrows">
+                                    <li class="item-lead"><a href="#">Daily offers</a></li>
+                                    <li class="item-lead"><a href="#">Gift Ideas</a></li>
+                                    <li><a href="#">Beds</a></li>
+                                    <li><a href="#">Lighting</a></li>
+                                    <li><a href="#">Sofas & Sleeper sofas</a></li>
+                                    <li><a href="#">Storage</a></li>
+                                   
+                                </ul><!-- End .menu-vertical -->
+                            </nav><!-- End .side-nav -->    
+                        </div><!-- End .dropdown-menu -->
+                    </div><!-- End .category-dropdown -->
+                </div><!-- End .header-left -->
+
+                <div class="header-center">
+                    <nav class="main-nav">
+                        <ul class="menu sf-arrows">
+                            <li class="megamenu-container active">
+                                <a href="/" >Home</a>
+
+                               
+                            </li>
+                            
+                            <li>
+                                <a href="/categoryboxed">Product</a>
+
+                                
+                            </li>
+                            <li>
+                                <a href="#" class="sf-with-ul">Pages</a>
+
+                                <ul>
+                                    <li>
+                                        <a href="about.html" class="sf-with-ul">About</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="/contact" class="sf-with-ul">Contact</a>
+
+                                       
+                                    <li><a href="#signin-modal" data-toggle="modal">Login</a></li>
+                                    
+                                </ul>
+                            </li>
+                           
+           
+                        </ul><!-- End .menu -->
+                    </nav><!-- End .main-nav -->
+                </div><!-- End .header-center -->
+
+                <div class="header-right">
+                    <i class="la la-lightbulb-o"></i><p>Clearance<span class="highlight">&nbsp;Up to 30% Off</span></p>
+                </div>
+            </div><!-- End .container -->
+        </div><!-- End .header-bottom -->
+    </header>
+   
+
+
+    <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="icon-close"></i></span>
+                    </button>
+
+                    <div class="form-box">
+                        <div class="form-tab">
+                            <ul class="nav nav-pills nav-fill nav-border-anim" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="signin-tab" data-toggle="tab" href="#signin" role="tab" aria-controls="signin" aria-selected="true">Sign In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="tab-content-5">
+                                <div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
+                                    <form action="/login" method="post">
+                                       <div class="form-group">
+                                            <label for="singin-name">Name</label>
+                                            <input type="text" class="form-control" id="singin-name" name="Name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="singin-email">email address *</label>
+                                            <input type="text" class="form-control" id="singin-email" name="Email" required>
+                                        </div><!-- End .form-group -->
+
+                                        <div class="form-group">
+                                            <label for="singin-password">Password *</label>
+                                            <input type="password" class="form-control" id="singin-password" name="Password" required>
+                                        </div><!-- End .form-group -->
+
+                                        <div class="form-footer">
+                                            <button type="submit" class="btn btn-outline-primary-2">
+                                                <span>LOG IN</span>
+                                                <i class="icon-long-arrow-right"></i>
+                                            </button>
+
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="signin-remember">
+                                                <label class="custom-control-label" for="signin-remember">Remember Me</label>
+                                            </div><!-- End .custom-checkbox -->
+
+                                            <a href="#" class="forgot-link">Forgot Your Password?</a>
+                                        </div><!-- End .form-footer -->
+                                    </form>
+                                    <div class="form-choice">
+                                        <p class="text-center">or sign in with</p>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <a href="/otplogin" class="btn btn-login btn-g">
+                                                    <i class="icon-google"></i>
+                                                    Login OTP
+                                                </a>
+                                            </div><!-- End .col-6 -->
+                                            <div class="col-sm-6">
+                                                <a href="#" class="btn btn-login btn-f">
+                                                    <i class="icon-facebook-f"></i>
+                                                    Login With Facebook
+                                                </a>
+                                            </div><!-- End .col-6 -->
+                                        </div><!-- End .row -->
+                                    </div><!-- End .form-choice -->
+                                </div><!-- .End .tab-pane -->
+                                <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                    <form action="/signup" method="post">
+                                        <div class="form-group">
+                                            <label for="register-name">Name</label>
+                                            <input type="text" class="form-control" name="name" id="register-name">
+                                            <label for="register-email">Your email address *</label>
+                                            <input type="email" class="form-control" id="register-email"  placeholder="koooiii" name="email" required>
+                                           
+                                        </div><!-- End .form-group -->
+                                        <div class="form-group">
+                                            <label for="register-password">Mobile Number *</label>
+                                            <input type="text" class="form-control" id="register-mobile"  name="mobile" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="register-password">Password *</label>
+                                            <input type="password" class="form-control" id="register-password"  name="password" required>
+                                        </div><!-- End .form-group -->
+
+                                        <div class="form-footer">
+                                            <button type="submit" class="btn btn-outline-primary-2">
+                                                <span>SIGN UP</span>
+                                                <i class="icon-long-arrow-right"></i>
+                                            </button>
+
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="register-policy" required>
+                                                <label class="custom-control-label" for="register-policy">I agree to the <a href="#">privacy policy</a> *</label>
+                                            </div><!-- End .custom-checkbox -->
+                                        </div><!-- End .form-footer -->
+                                    </form>
+                                    <div class="form-choice">
+                                        <p class="text-center">or sign in with</p>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <a href="#" class="btn btn-login btn-g">
+                                                    <i class="icon-google"></i>
+                                                    Login With Google
+                                                </a>
+                                            </div><!-- End .col-6 -->
+                                            <div class="col-sm-6">
+                                                <a href="#" class="btn btn-login  btn-f">
+                                                    <i class="icon-facebook-f"></i>
+                                                    Login With Facebook
+                                                </a>
+                                            </div><!-- End .col-6 -->
+                                        </div><!-- End .row -->
+                                    </div><!-- End .form-choice -->
+                                </div><!-- .End .tab-pane -->
+                            </div><!-- End .tab-content -->
+                        </div><!-- End .form-tab -->
+                    </div><!-- End .form-box -->
+                </div><!-- End .modal-body -->
+            </div><!-- End .modal-content -->
+        </div><!-- End .modal-dialog -->
+    </div>
+   
+    

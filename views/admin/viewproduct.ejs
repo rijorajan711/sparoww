@@ -1,0 +1,167 @@
+
+
+<body>
+    <div class="screen-overlay"></div>
+    
+    <main class="main-wrap">
+        
+        <section class="content-main">
+            <div class="content-header">
+                <div>
+                    <h2 class="content-title card-title">Products List</h2>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div>
+                    <a href="#" class="btn btn-light rounded font-md">Export</a>
+                    <a href="#" class="btn btn-light rounded  font-md">Import</a>
+                    <a href="/admin/createproductpage" class="btn btn-primary btn-sm rounded">Create new Product</a>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <header class="card-header">
+                    <div class="row align-items-center">
+                        <div class="col col-check flex-grow-0">
+                            <div class="form-check ms-2">
+                                <input class="form-check-input" type="checkbox" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-12 me-auto mb-md-0 mb-3">
+                            <select class="form-select">
+                                <option selected>All category</option>
+                                
+                                    <option><%= products.category%><option>
+                          
+                            </select>
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <input type="date" value="02.05.2021" class="form-control">
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <select class="form-select">
+                                <option selected>Status</option>
+                                <option>Active</option>
+                                <option>Disabled</option>
+                                <option>Show all</option>
+                            </select>
+                        </div>
+                    </div>
+                </header>
+
+
+
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Quantity</th>
+                                    <th>Stoke Status</th>
+                                    <th>Price</th>
+                                    <th > Action </th>
+                                    <th > Action </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <% locals.products.forEach((product)=>{%>
+
+
+                                        <tr>
+                                            <td width="40%">
+                    
+                                                <div class="col-lg-4 col-sm-4 col-8 flex-grow-1 col-name">
+                                                    <a class="itemside" href="#">
+                                                        <div class="left">
+                                                            <img src='/images/<%= product.imageurl[0] %>'class="img-sm img-thumbnail" alt="Item">
+                                                            
+                                                        </div>
+                                                        <div class="info">
+                                                            <h6 class="mb-0"><%= product.title %></h6>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                
+                                            </td>
+                                            
+                                            <td><%= product.quantity %></td>
+                                            <td><span class="badge rounded-pill alert-success"><%= product.stoke %></span></td>
+                                       
+                                            <td><%= product.price %></td>
+                                            <td class="text-end ">
+                                               
+                    
+                                                <div class="col-lg-2 col-sm-2 col-4 col-action text-end">
+                                                    <a href="/admin/editproduct/<%= product._id %>" class="btn btn-sm font-sm rounded btn-brand">
+                                                        <i class="material-icons md-edit"></i> Edit
+                                                    </a>
+                                                </div>
+                    
+                    
+                    
+                                            </td>
+                                            <td class="text-end">
+                                                <div class="col-lg-2 col-sm-2 col-4 col-action text-end">
+                                                <a href="/admin/deleteproduct/<%= product._id %>" class="btn btn-sm font-sm btn-light rounded">
+                                                    <i class="material-icons md-delete_forever"></i> Delete
+                                                </a>
+                                            </div>
+                                            </td>
+                                        </tr> 
+
+
+                                    <%}) %>
+                                      
+                              
+                
+                                
+                                
+                            </tbody>
+                        </table> <!-- table-responsive.// -->
+                    </div>
+                </div> 
+
+
+
+
+            <div class="pagination-area mt-30 mb-50">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-start">
+                        <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                        <li class="page-item"><a class="page-link" href="#">02</a></li>
+                        <li class="page-item"><a class="page-link" href="#">03</a></li>
+                        <li class="page-item"><a class="page-link dot" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link" href="#">16</a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i class="material-icons md-chevron_right"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section> <!-- content-main end// -->
+        <footer class="main-footer font-xs">
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script>
+                    document.write(new Date().getFullYear())
+                    </script> ©, Evara - HTML Ecommerce Template .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+   
+</body>
+
+
+
+
+
+
+
+
+
+
+

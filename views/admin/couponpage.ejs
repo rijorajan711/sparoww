@@ -1,0 +1,86 @@
+
+<main class="main-wrap">
+        
+    <section class="content-main">
+        <div class="content-header">
+            <h2 class="content-title">User Details</h2>
+            <div>
+                <a href="/admin/newcoupon" class="btn btn-primary"><i class="material-icons md-plus"></i> Create New Coupon</a>
+            </div>
+        </div>
+        <div class="card mb-4">
+            
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Coupon ID</th>
+                                <th>Expire Date</th>
+                                <th>Offer in %</th>
+                                <th>Max offer</th>
+                                <th class="text-end"> Cancel Coupon </th>
+                               
+                            </tr>
+                        </thead>
+                        <% datas.forEach((data)=>{%>
+                           <tbody>
+                             
+                                <tr>
+                                    <td >
+
+                                            <div class="info pl-3">
+                                                <h6 class="mb-0 title"><%= data.couponid %></h6>
+                                                
+                                            </div>
+                                        
+                                    </td>
+                                    
+                                    <td><%= data.expiredate %></td>
+                                    <td><%= data.percentage %> %</td>
+                                   
+                                    <td><%= data.maxoff %></td>
+                                    <td class="text-end ">
+                                        <a href="/admin/couponcancel/<%=data._id%>" class="btn btn-success btn-brand rounded font-sm ">Cancel</a>
+                                    </td>
+                                    
+                                </tr>   
+                            
+
+                            
+                            
+                        </tbody>
+                        <%})%>
+                       
+                    </table> <!-- table-responsive.// -->
+                </div>
+            </div> <!-- card-body end// -->
+        </div> <!-- card end// -->
+        <div class="pagination-area mt-15 mb-50">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-start">
+                    <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                    <li class="page-item"><a class="page-link" href="#">02</a></li>
+                    <li class="page-item"><a class="page-link" href="#">03</a></li>
+                    <li class="page-item"><a class="page-link dot" href="#">...</a></li>
+                    <li class="page-item"><a class="page-link" href="#">16</a></li>
+                    <li class="page-item"><a class="page-link" href="#"><i class="material-icons md-chevron_right"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </section> <!-- content-main end// -->
+    <footer class="main-footer font-xs">
+        <div class="row pb-30 pt-15">
+            <div class="col-sm-6">
+                <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+                document.write(new Date().getFullYear())
+                </script> ©, Evara - HTML Ecommerce Template .
+            </div>
+            <div class="col-sm-6">
+                <div class="text-sm-end">
+                    All rights reserved
+                </div>
+            </div>
+        </div>
+    </footer>
+</main>
