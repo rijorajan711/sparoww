@@ -65,7 +65,7 @@ module.exports = {
         to: userdata.email,
         subject: "Verify your email address",
         text: `Please click on the following link to verify your email address:https://sparoww.site/verify?&token=${token}&name=${name}&email=${email}&password=${password}&mobile=${mobile}`,
-      };
+      };                                
 
       transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
