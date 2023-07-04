@@ -38,7 +38,7 @@ router.get("/", home);
 router.get("/cart", userExist, getcartproduct);
 router.post("/signup", signupInertion);
 router.post("/login", userLogin);
-router.get("/verify", verifyemailjwt);
+
 router.get("/otplogin", OTPlogin);
 router.post("/mobilesend", Mobilesend);
 router.post("/otpsend", Otpsend);

@@ -57,11 +57,7 @@ module.exports = {
     
     });
   },
-  signupInertion: (req, res) => {
-    signupinsertion(req.body).then((response) => {
-      res.redirect("/");
-    });
-  },
+
 
   userLogin: (req, res) => {
     userlogin(req.body).then((response) => {
@@ -77,20 +73,13 @@ module.exports = {
          res.render("user/password")
     })
   },
-  verifyemailjwt: (req, res) => {
-    const token = req.query.token;
-    const name = req.query.name;
-    const email = req.query.email;
-    var password = req.query.password;
-    var mobile = req.query.mobile;
+  signupInertion: (req, res) => {
    
-    const secret = "mysecreatkey";
-
-    jwt.verify(token, secret, function (err, decoded) {
-      if (err) {
-        console.log(err);
-      } else {
-        return new Promise(async (resolve, reject) => {
+    const name = req.body.name;
+    const email = req.body.email;
+    var password = req.body.password;
+    var mobile = req.body.mobile;
+         return new Promise(async (resolve, reject) => {
           password = await bcrypt.hash(password, 10);
           var userDetails = new userModel({
             username: name,
@@ -102,8 +91,8 @@ module.exports = {
             res.redirect("/");
           });
         });
-      }
-    });
+      
+    
   },
   OTPlogin: (req, res) => {
     res.render("user/otplogin");

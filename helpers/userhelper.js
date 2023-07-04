@@ -37,46 +37,7 @@ module.exports = {
       resolve(productdata);
     });
   },
-  signupinsertion: (userdata) => {
-    return new Promise((resolve, reject) => {
-      const name = userdata.name;
-      const email = userdata.email;
-      const password = userdata.password;
-      const mobile = userdata.mobile;
-
-      const user = { id: Math.floor(Math.random() * 9000 + Date.now()) };
-      const secret = "mysecreatkey";
-      const token = jwt.sign(user, secret, { expiresIn: "1h" });
-
-      const transporter = nodemailer.createTransport({
-        service: "gmail",
-        host: "smtp.gmail.com",
-        port: 465,
-        secure: true,
-
-        auth: {
-          user: "oceansparrowww@gmail.com",
-          pass: "fewvxuhjhvtenkha",
-        },
-      });
-
-      const mailOptions = {
-        from: "oceansparrowww@gmail.com",
-        to: userdata.email,
-        subject: "Verify your email address",
-        text: `Please click on the following link to verify your email address:https://sparoww.site/verify?&token=${token}&name=${name}&email=${email}&password=${password}&mobile=${mobile}`,
-      };                                
-
-      transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-          console.log(error);
-        } else {
-          console.log("Email is sent: " + info.response);
-        }
-        resolve();
-      });
-    });
-  },
+  
   userlogin: (userdata) => {
     return new Promise(async (resolve, reject) => {
       let userr = await userModel.findOne({ email: userdata.Email });
