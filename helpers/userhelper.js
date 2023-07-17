@@ -201,7 +201,7 @@ module.exports = {
   },
   Categoryboxed: (lim) => {
     return new Promise(async (resolve, reject) => {
-      const page = 1;
+       
       const limit = 2;
 
       let totalproduct = await productModel.countDocuments();
