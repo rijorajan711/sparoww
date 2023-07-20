@@ -67,17 +67,22 @@ module.exports = {
       let Userr = await userModel.findOne({ mobile: data.mobile });
       global.Userr = Userr;
       if (Userr) {
-        const accountSid = process.env.TWILIO_accountSid;
-        const authToken = process.env.TWILIO_authToken;
+        console.log("otppppp")
+        const accountSid ="ACa25b352e8a9f47a142773f57549605c0" ;
+        const authToken = "4b32c2b738b7b896c3580031a2d4fe69";
         const client = require("twilio")(accountSid, authToken);
-        const phoneNumber = `+${Userr.mobile}`;
-    
+        const phoneNumber = `+${data.mobile}`;
+        console.log("the otppppp is"+phoneNumber)
 
+        // TWILIO_accountSid = process.env.TWILIO_accountSid
+        // TWILIO_authToken = process.env.TWILIO_authToken
+        
         const otp = Math.floor(1000 + Math.random() * 9000);
+      
         const message = `Your OTP code is ${otp}.`;
         global.OTP = otp;
- 
-
+     
+        
         client.messages
           .create({
             body: message,
