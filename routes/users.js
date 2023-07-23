@@ -30,7 +30,7 @@ var {
   vieworder,
   ordercancel,
   ordreturn,
-  verifypayment,nextpage,previouspage,wishlist,addtowishlist,wishlistproductremove,contact,notsignup
+  verifypayment,nextpage,previouspage,wishlist,addtowishlist,wishlistproductremove,contact,notsignup,about
 } = require("../controller/userController");
 
 /* GET users listing. */
@@ -67,6 +67,7 @@ router.post("/addTowishlist",addtowishlist)
 router.get("/wishlistproductremove/:id",wishlistproductremove)
 router.get("/contact",contact)
 router.get("/notsignup",notsignup)
+router.get("/about",about)
 
 // router.post('/login',verifyLogin)
 

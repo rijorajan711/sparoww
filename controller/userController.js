@@ -370,6 +370,9 @@ module.exports = {
   },
   notsignup:(req,res)=>{
     res.render("user/signup")
+  },
+  about:(req,res)=>{
+    res.render("user/about",)
   }
  
 };
