@@ -4,7 +4,7 @@ var orderModel = require("../models/orderschema");
 
 var {
   homeproduct,
-  signupinsertion,
+  SignupInsertion,
   userlogin,
   MobileSend,
   OTPsend,
@@ -74,29 +74,12 @@ module.exports = {
     })
   },
   signupInertion: (req, res) => {
-      console.log(req.body)
-    const name = req.body.name;
-    const email = req.body.email;
-    var password = req.body.password;
-    var mobile = req.body.mobile;
-         return new Promise(async (resolve, reject) => {
-          // password = await bcrypt.hash(password, 10);
-          var userDetails =await new userModel({
-            username: name,
-            email: email,
-            password: password,
-            mobile: mobile,
-          });
-          userDetails.save().then((response) => {
-            if(response){
-
-              res.redirect("/");
-            }
-          });
+      SignupInsertion(req.body).then((response) => {
+        res.redirect("/");
         });
-      
     
-  },
+              },
+
   OTPlogin: (req, res) => {
     res.render("user/otplogin");
   },

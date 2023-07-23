@@ -37,6 +37,25 @@ module.exports = {
       resolve(productdata);
     });
   },
+   SignupInsertion:(body)=>{
+       
+    const name     = body.name;
+    const email    = body.email;
+    var   password = body.password;
+    var   mobile   = body.mobile;
+          return new Promise(async(resolve, reject) => {
+          password = await bcrypt.hash(password, 10);
+          var userDetails = new userModel({
+            username: name,
+            email: email,
+            password: password,
+            mobile: mobile,
+          });
+          userDetails.save()
+            resolve()
+            });
+   }
+  ,
   
   userlogin: (userdata) => {
     return new Promise(async (resolve, reject) => {
