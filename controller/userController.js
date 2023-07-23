@@ -77,7 +77,7 @@ module.exports = {
       SignupInsertion(req.body).then((response) => {
         res.redirect("/");
         }).catch((err)=>{
-             res.render("user/er",{err})
+             res.render("user/er")
         })
     
               },
