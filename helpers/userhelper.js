@@ -51,8 +51,14 @@ module.exports = {
             password: password,
             mobile: mobile,
           });
-          userDetails.save()
-            resolve()
+          userDetails.save().then((response)=>{
+            if(response){
+              resolve()
+            }
+            else{
+              reject()
+            }
+          })
             });
    }
   ,
