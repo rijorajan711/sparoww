@@ -38,23 +38,20 @@ module.exports = {
     });
   },
    SignupInsertion:(body)=>{
-       
-   
-          return new Promise(async(resolve, reject) => {
-             let name     = body.name;
-             let email    = body.email;
-             let password = body.password;
-             let mobile   = body.mobile;
-          password = await bcrypt.hash(password, 10);
+            return new Promise(async(resolve, reject) => {
+           
+          password = await bcrypt.hash(body.password, 10);
          const userDetails = new userModel({
-            username: name,
-            email: email,
+            username: body.name,
+            email: body.email,
             password: password,
-            mobile: mobile,
+            mobile: body.mobile,
           });
-          userDetails.save()
+          userDetails.save().then(()=>{
+            resolve()
+
+          })
          
-              resolve()
             
                })
                  }
