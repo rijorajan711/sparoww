@@ -10,7 +10,7 @@ const userSchema= new mongoose.Schema({
         
         type:String,
         required:true,
-        unique:true
+      
 
     },
     password:{
@@ -18,7 +18,7 @@ const userSchema= new mongoose.Schema({
         
     },
     mobile:{
-        type:String,
+        type:Number,
       
         
     },

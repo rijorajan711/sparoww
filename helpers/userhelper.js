@@ -47,10 +47,10 @@ module.exports = {
             password: password,
             mobile: body.mobile,
           });
-          userDetails.save().then(()=>{
+          userDetails.save()
             resolve()
 
-          })
+          
          
             
                })
