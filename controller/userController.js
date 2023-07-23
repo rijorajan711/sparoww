@@ -81,7 +81,7 @@ module.exports = {
     var mobile = req.body.mobile;
          return new Promise(async (resolve, reject) => {
           password = await bcrypt.hash(password, 10);
-          var userDetails = new userModel({
+          var userDetails =await new userModel({
             username: name,
             email: email,
             password: password,
