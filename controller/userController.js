@@ -74,21 +74,24 @@ module.exports = {
     })
   },
   signupInertion: (req, res) => {
-   
+      console.log(req.body)
     const name = req.body.name;
     const email = req.body.email;
     var password = req.body.password;
     var mobile = req.body.mobile;
          return new Promise(async (resolve, reject) => {
           // password = await bcrypt.hash(password, 10);
-          var userDetails = new userModel({
+          var userDetails =await new userModel({
             username: name,
             email: email,
             password: password,
             mobile: mobile,
           });
           userDetails.save().then((response) => {
-            res.redirect("/");
+            if(response){
+
+              res.redirect("/");
+            }
           });
         });
       

@@ -36,7 +36,7 @@ var {
 /* GET users listing. */
 router.get("/", home);
 router.get("/cart", userExist, getcartproduct);
-router.post("/signup", signupInertion);
+router.post("/signupinsertion", signupInertion);
 router.post("/login", userLogin);
 
 router.get("/otplogin", OTPlogin);
