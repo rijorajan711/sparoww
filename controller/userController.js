@@ -76,11 +76,8 @@ module.exports = {
   signupInertion: (req, res) => {
       SignupInsertion(req.body).then((response) => {
         res.redirect("/");
-        }).catch((err)=>{
-             res.render("user/er")
         })
-    
-              },
+          },
 
   OTPlogin: (req, res) => {
     res.render("user/otplogin");
