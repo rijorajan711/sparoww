@@ -39,28 +39,25 @@ module.exports = {
   },
    SignupInsertion:(body)=>{
        
-    const name     = body.name;
-    const email    = body.email;
-    var   password = body.password;
-    var   mobile   = body.mobile;
+   
           return new Promise(async(resolve, reject) => {
+             let name     = body.name;
+             let email    = body.email;
+             let password = body.password;
+             let mobile   = body.mobile;
           password = await bcrypt.hash(password, 10);
-          var userDetails = new userModel({
+         const userDetails = new userModel({
             username: name,
             email: email,
             password: password,
             mobile: mobile,
           });
-          userDetails.save().then((response)=>{
-            if(response){
+          userDetails.save()
+         
               resolve()
-            }
-            else{
-              reject()
-            }
-          })
-            });
-   }
+            
+               })
+                 }
   ,
   
   userlogin: (userdata) => {

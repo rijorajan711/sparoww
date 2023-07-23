@@ -1,5 +1,5 @@
 const db = require("../config/connection");
-var userModel = require("../models/usermodel");
+
 var orderModel = require("../models/orderschema");
 
 var {
