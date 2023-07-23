@@ -43,6 +43,7 @@ module.exports = {
     });
   },
   addproduct: (data, image, orgname) => {
+    console.log("nthaaaa eth")
     return new Promise((resolve, reject) => {
       let adminmodel = new adminModel({
         title: data.title,
