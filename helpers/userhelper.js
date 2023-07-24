@@ -40,11 +40,11 @@ module.exports = {
    SignupInsertion:(body)=>{
             return new Promise(async(resolve, reject) => {
            
-          password = await bcrypt.hash(body.password, 10);
+       
          const userDetails = new userModel({
             username: body.name,
             email: body.email,
-            password: password,
+            password: body.password,
             mobile: body.mobile,
           });
           userDetails.save()
