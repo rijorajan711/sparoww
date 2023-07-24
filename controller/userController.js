@@ -165,10 +165,9 @@ module.exports = {
     });
   },
   adresspage: (req, res) => {
-    let user = req.session.user;
-    setedadress().then((datas) => {
-      res.render("user/defaultadress", { user, datas });
-    });
+   
+      res.render("user/defaultadress", { user });
+   
   },
   viewproduct: (req, res) => {
     let proid = req.params.id;
