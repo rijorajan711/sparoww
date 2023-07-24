@@ -6,9 +6,8 @@ var {} = require("../helpers/userhelper");
 var {
   home,
   userExist,
-  signupInertion,
   userLogin,
-  verifyemailjwt,
+  signupInertion,
   OTPlogin,
   Mobilesend,
   Otpsend,
