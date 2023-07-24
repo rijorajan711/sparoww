@@ -1,4 +1,6 @@
 const db = require("../config/connection");
+const mongoose = require("mongoose");
+mongoose.set('strictPopulate', false);
 var userModel = require("../models/usermodel");
 var productModel = require("../models/productaddschema");
 const addcartModel = require("../models/addcartscheema");
@@ -6,8 +8,6 @@ const addressModel = require("../models/addressschema");
 const couponModel = require("../models/couponschema");
 const orderModel = require("../models/orderschema");
 const wishlistModel=require("../models/wishlistschema")
-const mongoose = require("mongoose");
-mongoose.set('strictPopulate', false);
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");

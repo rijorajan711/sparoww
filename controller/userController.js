@@ -74,7 +74,7 @@ module.exports = {
     })
   },
   signupInertion: (req, res) => {
-  
+        
       SignupInsertion(req.body).then((response) => {
         res.redirect("/");
         })
