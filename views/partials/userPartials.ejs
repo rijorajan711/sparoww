@@ -12,29 +12,8 @@
                         <li>
                             <a href="#">Links</a>
                             <ul>
-                                <li>
-                                    <div class="header-dropdown">
-                                        <a href="#">USD</a>
-                                        <div class="header-menu"  style="color: aliceblue; background-color:#666;">
-                                            <ul>
-                                                <li><a href="#">Eur</a></li>
-                                                <li><a href="#">Usd</a></li>
-                                            </ul>
-                                        </div><!-- End .header-menu -->
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="header-dropdown">
-                                        <a href="#">English</a>
-                                        <div class="header-menu" style="color: aliceblue; background-color:#666;">
-                                            <ul>
-                                                <li><a href="#">English</a></li>
-                                                <li><a href="#">French</a></li>
-                                                <li><a href="#">Spanish</a></li>
-                                            </ul>
-                                        </div><!-- End .header-menu -->
-                                    </div>
-                                </li>
+                               
+                                
                              
                                 <li>
 
@@ -160,6 +139,7 @@
 
                                
                             </li>
+                           
                             
                             <li>
                                 <a href="/categoryboxed">Product</a>
@@ -182,7 +162,22 @@
                                     
                                 </ul>
                             </li>
-                           
+
+
+                            <% if (locals.user) { %>
+
+                                <li >
+                                    <a href="/vieworder">View Order</a>
+    
+                                   
+                                </li>
+
+
+                               
+                             <% }else{%>
+                               
+                                <li></li>
+                                <%} %>
            
                         </ul><!-- End .menu -->
                     </nav><!-- End .main-nav -->

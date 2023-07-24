@@ -165,7 +165,8 @@ module.exports = {
     });
   },
   adresspage: (req, res) => {
-   
+      console.log(".......................................IAM HERE ADRESS PAGE")
+      let user = req.session.user;
       res.render("user/defaultadress", { user });
    
   },
