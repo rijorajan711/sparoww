@@ -17,6 +17,8 @@ const Razorpay = require("razorpay");
 const { addproduct } = require("./producthelper");
 const { log } = require("console");
 require('dotenv').config()
+const dotenv=require("dotenv")
+dotenv.config({path:"D:/first project/.env"})
 
 
  
@@ -87,8 +89,9 @@ module.exports = {
       global.Userr = Userr;
       if (Userr) {
         console.log("otppppp")
-        const accountSid ="ACa25b352e8a9f47a142773f57549605c0" ;
-        const authToken = "4b32c2b738b7b896c3580031a2d4fe69";
+        const accountSid =process.env.TWILIO_accountSid ;
+      
+        const authToken =process.env.TWILIO_authToken ;
         const client = require("twilio")(accountSid, authToken);
         const phoneNumber = `+${data.mobile}`;
         console.log("the otppppp is"+phoneNumber)
