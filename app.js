@@ -9,6 +9,7 @@ var logger = require('morgan');
 var adminRouter = require('./routes/admin');
 var userRouter = require('./routes/users');
 var app = express();
+
 var expressLayouts=require("express-ejs-layouts")
 var db=require('./config/connection')
 
@@ -18,7 +19,7 @@ app.set('view engine', 'ejs');
 app.set('layout', 'layout')
 
 
-app.use(logger('dev'));
+     
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
